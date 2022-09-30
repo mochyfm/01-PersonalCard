@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   nameBanner: {
-    flex: 2
+    flex: 1
   },
   DescriptionBody: {
-    flex: 3
+    flex: 1
   },
   QrCodeFooter: {
     flex: 2
