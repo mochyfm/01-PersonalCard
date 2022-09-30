@@ -16,15 +16,14 @@ export default DescriptionBody;
 
 const styles = StyleSheet.create({
     descriptionBody: {
-        flex: 1,
+        flex: 2,
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 40,
-        marginRight: 40
+        margin: 35
     },
     descriptionText: {
         textAlign: 'justify',
-        fontSize: 16
+        fontSize: 14
     },
     italicText: {
         fontStyle: 'italic'
