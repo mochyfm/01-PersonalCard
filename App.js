@@ -1,6 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import NameBanner from './Components/NameBanner';
 import DescriptionBody from './Components/DescriptionBody'
+import QrCodeFooter from './Components/QrCodeFooter';
 
 const App = () => {
 
@@ -10,6 +11,7 @@ const App = () => {
     <View style={styles.container}>
       <NameBanner style={styles.nameBanner} givenName={userName}/>
       <DescriptionBody givenName={userName}/>
+      <QrCodeFooter link={'https://github.com/mochyfm/01-PersonalCard'}/>
     </View>
   );
 
@@ -21,4 +23,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  nameBanner: {
+    flex: 2
+  },
+  DescriptionBody: {
+    flex: 3
+  },
+  QrCodeFooter: {
+    flex: 2
+  }
 });
