@@ -1,11 +1,11 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 
-const NameBanner = ({givenName}) => {
+const NameBanner = ({userData}) => {
     return (
       <View>
         <View style={styles.nameBanner}>
           <Image style={styles.prof_Picture} source={require('./profile/example.jpg')}></Image>
-          <Text style={styles.nameText}>{givenName}</Text>
+          <Text style={styles.nameText}>{userData.userName}</Text>
         </View>
       </View>
     );

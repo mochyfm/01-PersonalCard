@@ -1,16 +1,21 @@
 import { StyleSheet, View } from 'react-native';
+import { useState } from 'react';
 import NameBanner from './Components/NameBanner';
 import DescriptionBody from './Components/DescriptionBody'
 import QrCodeFooter from './Components/QrCodeFooter';
 
+
 const App = () => {
 
-  const userName = 'Moisés Fernández Muiña'
+  const [userData, setUser] = useState({
+    userName: 'Moisés Fernández Muiña',
+    age: 21
+  })
 
   return (
     <View style={styles.container}>
-      <NameBanner style={styles.nameBanner} givenName={userName}/>
-      <DescriptionBody givenName={userName}/>
+      <NameBanner style={styles.nameBanner} userData={userData}/>
+      <DescriptionBody userData={userData}/>
       <QrCodeFooter link={'https://github.com/mochyfm/01-PersonalCard'}/>
     </View>
   );
