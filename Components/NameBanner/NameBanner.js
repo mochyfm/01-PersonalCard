@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 10,
     paddingLeft: 20,
-    
+
     flexDirection: 'row',
 
     alignItems: 'center',
@@ -36,9 +36,14 @@ const styles = StyleSheet.create({
   },
   nameText: {
     flex: 7,
+
     color: '#FFFFFF',
     fontWeight: 'bold',
     fontSize: 22,
+    textShadowColor: '#000',
+    textShadowOffset: {width: 3, height: 3},
+    textShadowRadius: 3,
+
     paddingLeft: 10,
     textAlign: 'left'
   }
