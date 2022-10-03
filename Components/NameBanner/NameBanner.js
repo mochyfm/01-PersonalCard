@@ -1,12 +1,21 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, View } from 'react-native';
 
-const NameBanner = ({userData}) => {
+
+
+const NameBanner = ({userData, setUser}) => {
+
+  const template = (value) => {
+    if (!value) return styles.lightMode;
+    else return styles.darkMode;
+  } 
+
     return (
       <View>
-        <View style={styles.nameBanner}>
+        <View style={[styles.nameBanner, template(userData.template)]}>
           <Image style={styles.prof_Picture} source={require('./profile/example.jpg')}></Image>
-          <Text style={styles.nameText}>{userData.userName}</Text>
+          <Text style={[styles.nameText, template(userData.template)]}>{userData.userName}</Text>
         </View>
+        <Button title='Change Template'/>
       </View>
     );
   }
@@ -15,8 +24,15 @@ export default NameBanner;
 
 
 const styles = StyleSheet.create({
+  lightMode: {
+    backgroundColor: '#000',
+    color: '#FFF'
+  },
+  darkMode: {
+    backgroundColor: '#FFF',
+    color: '#000'
+  },
   nameBanner: {
-    backgroundColor: '#808080',
     height: 175,
     paddingTop: 30,
     paddingRight: 20,
@@ -29,18 +45,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   prof_Picture: {
+    borderWidth: 2,
     borderRadius: 50,
     flex: 2,
     width: 90,
-    height: 80
+    height: 80,
   },
   nameText: {
     flex: 7,
-
-    color: '#FFFFFF',
     fontWeight: 'bold',
     fontSize: 22,
-    textShadowColor: '#000',
+    textShadowColor: '#808080',
     textShadowOffset: {width: 3, height: 3},
     textShadowRadius: 3,
 
